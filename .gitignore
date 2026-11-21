@@ -1,0 +1,33 @@
+# macOS and editor files
+.DS_Store
+._*
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local dependencies and caches
+node_modules/
+.npm/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Test output and temporary files
+coverage/
+playwright-report/
+test-results/
+*.log
+/tmp/
+/temp/
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# Keep recovered artwork, scene data, research and vendor/ tracked:
+# they support offline play and document the original game.
