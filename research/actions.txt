@@ -1,0 +1,3375 @@
+
+{"owner": "root", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "button-11", "frame": 1, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 2
+0005 Play None
+0006 End None
+
+{"owner": "button-16", "frame": 1, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 83
+0005 Play None
+0006 End None
+
+{"owner": "button-21", "frame": 1, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 164
+0005 Play None
+0006 End None
+
+{"owner": "button-26", "frame": 1, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 245
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 37, "kind": "frame"}
+0000 GotoFrame 38
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 38, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas', 5]
+0028 SetMember None
+0029 Push ['_root']
+002e GetVariable None
+002f Push ['pontos', 0.0]
+003d SetMember None
+003e End None
+
+{"owner": "sprite-70", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "sprite-74", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "sprite-74", "frame": 10, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas']
+0011 Push ['_root']
+0016 GetVariable None
+0017 Push ['vidas', '_root']
+001e GetVariable None
+001f Push ['vidas']
+0024 GetMember None
+0025 Decrement None
+0026 SetMember None
+0027 End None
+
+{"owner": "root", "frame": 38, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 38, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [6]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 38, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 39, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 82
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [200]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 41
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 40, "kind": "frame"}
+0000 GotoFrame 39
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 41, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 41, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 41, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 41, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [15]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 41, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 42, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 82
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [400]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 44
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 43, "kind": "frame"}
+0000 GotoFrame 42
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 25]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 30]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 44, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 45, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 82
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [600]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 47
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 46, "kind": "frame"}
+0000 GotoFrame 45
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [20]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 15]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'heroi', 'hitTest', 'gotoAndPlay']
+0035 Push ['this']
+003a GetVariable None
+003b Push ['_y', 'this']
+0042 GetVariable None
+0043 Push ['_y']
+0048 GetMember None
+0049 Push ['velo']
+004e GetVariable None
+004f Add2 None
+0050 SetMember None
+0051 Push ['this']
+0056 GetVariable None
+0057 Push ['_y']
+005c GetMember None
+005d Push [450]
+0065 Less2 None
+0066 Not None
+0067 Not None
+0068 If {'target': 148}
+006d Push ['this']
+0072 GetVariable None
+0073 Push ['_y', 0.0]
+0081 SetMember None
+0082 Push ['this']
+0087 GetVariable None
+0088 Push ['_x', 600]
+0092 RandomNumber None
+0093 SetMember None
+0094 Push ['_root']
+0099 GetVariable None
+009a Push ['heroi']
+009f GetMember None
+00a0 Push [1, 'this']
+00aa GetVariable None
+00ab Push ['hitTest']
+00b0 CallMethod None
+00b1 Not None
+00b2 If {'target': 212}
+00b7 Push [2, 1, '_root']
+00c6 GetVariable None
+00c7 Push ['heroi']
+00cc GetMember None
+00cd Push ['gotoAndPlay']
+00d2 CallMethod None
+00d3 Pop None
+00d4 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 10, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 47, "kind": "clip", "depth": 10, "event": "0x2"}
+0000 ConstantPool ['this', '_x', 'velo', '_y', '_root', 'heroi', 'hitTest', 'vidas']
+002f Push ['this']
+0034 GetVariable None
+0035 Push ['_x', 'this']
+003c GetVariable None
+003d Push ['_x']
+0042 GetMember None
+0043 Push ['velo']
+0048 GetVariable None
+0049 Add2 None
+004a SetMember None
+004b Push ['this']
+0050 GetVariable None
+0051 Push ['_x']
+0056 GetMember None
+0057 Push [600]
+005f Less2 None
+0060 Not None
+0061 Not None
+0062 If {'target': 142}
+0067 Push ['this']
+006c GetVariable None
+006d Push ['_x', 0.0]
+007b SetMember None
+007c Push ['this']
+0081 GetVariable None
+0082 Push ['_y', 450]
+008c RandomNumber None
+008d SetMember None
+008e Push ['_root']
+0093 GetVariable None
+0094 Push ['heroi']
+0099 GetMember None
+009a Push [1, 'this']
+00a4 GetVariable None
+00a5 Push ['hitTest']
+00aa CallMethod None
+00ab Not None
+00ac If {'target': 198}
+00b1 Push ['_root']
+00b6 GetVariable None
+00b7 Push ['vidas', 0.0]
+00c5 SetMember None
+00c6 End None
+
+{"owner": "root", "frame": 48, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 82
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [1000]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 50
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 49, "kind": "frame"}
+0000 GotoFrame 48
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 81, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f Stop None
+0020 End None
+
+{"owner": "button-131", "frame": 81, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 38
+0005 Play None
+0006 End None
+
+{"owner": "button-133", "frame": 81, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 1
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 82, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "root", "frame": 82, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None
+
+{"owner": "root", "frame": 118, "kind": "frame"}
+0000 GotoFrame 119
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 119, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas', 5]
+0028 SetMember None
+0029 Push ['_root']
+002e GetVariable None
+002f Push ['pontos', 0.0]
+003d SetMember None
+003e End None
+
+{"owner": "sprite-179", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "sprite-179", "frame": 10, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas']
+0011 Push ['_root']
+0016 GetVariable None
+0017 Push ['vidas', '_root']
+001e GetVariable None
+001f Push ['vidas']
+0024 GetMember None
+0025 Decrement None
+0026 SetMember None
+0027 End None
+
+{"owner": "root", "frame": 119, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 119, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 119, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 120, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 163
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [200]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 122
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 121, "kind": "frame"}
+0000 GotoFrame 120
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 122, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 122, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 122, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 122, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [15]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 122, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 123, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 163
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [400]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 125
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 124, "kind": "frame"}
+0000 GotoFrame 123
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 25]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 30]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 125, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 126, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 163
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [600]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 128
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 127, "kind": "frame"}
+0000 GotoFrame 126
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [20]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 15]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'almondega', 'hitTest', 'gotoAndPlay']
+0039 Push ['this']
+003e GetVariable None
+003f Push ['_y', 'this']
+0046 GetVariable None
+0047 Push ['_y']
+004c GetMember None
+004d Push ['velo']
+0052 GetVariable None
+0053 Add2 None
+0054 SetMember None
+0055 Push ['this']
+005a GetVariable None
+005b Push ['_y']
+0060 GetMember None
+0061 Push [450]
+0069 Less2 None
+006a Not None
+006b Not None
+006c If {'target': 152}
+0071 Push ['this']
+0076 GetVariable None
+0077 Push ['_y', 0.0]
+0085 SetMember None
+0086 Push ['this']
+008b GetVariable None
+008c Push ['_x', 600]
+0096 RandomNumber None
+0097 SetMember None
+0098 Push ['_root']
+009d GetVariable None
+009e Push ['almondega']
+00a3 GetMember None
+00a4 Push [1, 'this']
+00ae GetVariable None
+00af Push ['hitTest']
+00b4 CallMethod None
+00b5 Not None
+00b6 If {'target': 216}
+00bb Push [2, 1, '_root']
+00ca GetVariable None
+00cb Push ['almondega']
+00d0 GetMember None
+00d1 Push ['gotoAndPlay']
+00d6 CallMethod None
+00d7 Pop None
+00d8 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 10, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 128, "kind": "clip", "depth": 10, "event": "0x2"}
+0000 ConstantPool ['this', '_x', 'velo', '_y', '_root', 'almondega', 'hitTest', 'vidas']
+0033 Push ['this']
+0038 GetVariable None
+0039 Push ['_x', 'this']
+0040 GetVariable None
+0041 Push ['_x']
+0046 GetMember None
+0047 Push ['velo']
+004c GetVariable None
+004d Add2 None
+004e SetMember None
+004f Push ['this']
+0054 GetVariable None
+0055 Push ['_x']
+005a GetMember None
+005b Push [600]
+0063 Less2 None
+0064 Not None
+0065 Not None
+0066 If {'target': 146}
+006b Push ['this']
+0070 GetVariable None
+0071 Push ['_x', 0.0]
+007f SetMember None
+0080 Push ['this']
+0085 GetVariable None
+0086 Push ['_y', 450]
+0090 RandomNumber None
+0091 SetMember None
+0092 Push ['_root']
+0097 GetVariable None
+0098 Push ['almondega']
+009d GetMember None
+009e Push [1, 'this']
+00a8 GetVariable None
+00a9 Push ['hitTest']
+00ae CallMethod None
+00af Not None
+00b0 If {'target': 202}
+00b5 Push ['_root']
+00ba GetVariable None
+00bb Push ['vidas', 0.0]
+00c9 SetMember None
+00ca End None
+
+{"owner": "root", "frame": 129, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 163
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [1000]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 131
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 130, "kind": "frame"}
+0000 GotoFrame 129
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 162, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f Stop None
+0020 End None
+
+{"owner": "button-204", "frame": 162, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 119
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 163, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "root", "frame": 163, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None
+
+{"owner": "root", "frame": 199, "kind": "frame"}
+0000 GotoFrame 200
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 200, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas', 5]
+0028 SetMember None
+0029 Push ['_root']
+002e GetVariable None
+002f Push ['pontos', 0.0]
+003d SetMember None
+003e End None
+
+{"owner": "sprite-245", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "sprite-245", "frame": 10, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas']
+0011 Push ['_root']
+0016 GetVariable None
+0017 Push ['vidas', '_root']
+001e GetVariable None
+001f Push ['vidas']
+0024 GetMember None
+0025 Decrement None
+0026 SetMember None
+0027 End None
+
+{"owner": "root", "frame": 200, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 200, "kind": "clip", "depth": 5, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [6]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 200, "kind": "clip", "depth": 5, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 201, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 244
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [200]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 203
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 202, "kind": "frame"}
+0000 GotoFrame 201
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 203, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 203, "kind": "clip", "depth": 5, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 203, "kind": "clip", "depth": 5, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 203, "kind": "clip", "depth": 7, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [15]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 203, "kind": "clip", "depth": 7, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 204, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 244
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [400]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 206
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 205, "kind": "frame"}
+0000 GotoFrame 204
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 5, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 5, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 7, "event": "0x1"}
+0000 Push ['velo', 25]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 7, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 9, "event": "0x1"}
+0000 Push ['velo', 30]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 206, "kind": "clip", "depth": 9, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 207, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 244
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [600]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 209
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 208, "kind": "frame"}
+0000 GotoFrame 207
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 5, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [20]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 5, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 7, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 7, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 9, "event": "0x1"}
+0000 Push ['velo', 15]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 9, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'peterson', 'hitTest', 'gotoAndPlay']
+0038 Push ['this']
+003d GetVariable None
+003e Push ['_y', 'this']
+0045 GetVariable None
+0046 Push ['_y']
+004b GetMember None
+004c Push ['velo']
+0051 GetVariable None
+0052 Add2 None
+0053 SetMember None
+0054 Push ['this']
+0059 GetVariable None
+005a Push ['_y']
+005f GetMember None
+0060 Push [450]
+0068 Less2 None
+0069 Not None
+006a Not None
+006b If {'target': 151}
+0070 Push ['this']
+0075 GetVariable None
+0076 Push ['_y', 0.0]
+0084 SetMember None
+0085 Push ['this']
+008a GetVariable None
+008b Push ['_x', 600]
+0095 RandomNumber None
+0096 SetMember None
+0097 Push ['_root']
+009c GetVariable None
+009d Push ['peterson']
+00a2 GetMember None
+00a3 Push [1, 'this']
+00ad GetVariable None
+00ae Push ['hitTest']
+00b3 CallMethod None
+00b4 Not None
+00b5 If {'target': 215}
+00ba Push [2, 1, '_root']
+00c9 GetVariable None
+00ca Push ['peterson']
+00cf GetMember None
+00d0 Push ['gotoAndPlay']
+00d5 CallMethod None
+00d6 Pop None
+00d7 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 11, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 209, "kind": "clip", "depth": 11, "event": "0x2"}
+0000 ConstantPool ['this', '_x', 'velo', '_y', '_root', 'peterson', 'hitTest', 'vidas']
+0032 Push ['this']
+0037 GetVariable None
+0038 Push ['_x', 'this']
+003f GetVariable None
+0040 Push ['_x']
+0045 GetMember None
+0046 Push ['velo']
+004b GetVariable None
+004c Add2 None
+004d SetMember None
+004e Push ['this']
+0053 GetVariable None
+0054 Push ['_x']
+0059 GetMember None
+005a Push [600]
+0062 Less2 None
+0063 Not None
+0064 Not None
+0065 If {'target': 145}
+006a Push ['this']
+006f GetVariable None
+0070 Push ['_x', 0.0]
+007e SetMember None
+007f Push ['this']
+0084 GetVariable None
+0085 Push ['_y', 450]
+008f RandomNumber None
+0090 SetMember None
+0091 Push ['_root']
+0096 GetVariable None
+0097 Push ['peterson']
+009c GetMember None
+009d Push [1, 'this']
+00a7 GetVariable None
+00a8 Push ['hitTest']
+00ad CallMethod None
+00ae Not None
+00af If {'target': 201}
+00b4 Push ['_root']
+00b9 GetVariable None
+00ba Push ['vidas', 0.0]
+00c8 SetMember None
+00c9 End None
+
+{"owner": "root", "frame": 210, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 244
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [1000]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 212
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 211, "kind": "frame"}
+0000 GotoFrame 210
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 243, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None
+
+{"owner": "root", "frame": 243, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "button-270", "frame": 243, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 200
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 244, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "root", "frame": 244, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None
+
+{"owner": "root", "frame": 280, "kind": "frame"}
+0000 GotoFrame 281
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 281, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas', 5]
+0028 SetMember None
+0029 Push ['_root']
+002e GetVariable None
+002f Push ['pontos', 0.0]
+003d SetMember None
+003e End None
+
+{"owner": "sprite-315", "frame": 1, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "sprite-315", "frame": 10, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas']
+0011 Push ['_root']
+0016 GetVariable None
+0017 Push ['vidas', '_root']
+001e GetVariable None
+001f Push ['vidas']
+0024 GetMember None
+0025 Decrement None
+0026 SetMember None
+0027 End None
+
+{"owner": "root", "frame": 281, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 281, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [6]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 281, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 282, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 325
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [200]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 284
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 283, "kind": "frame"}
+0000 GotoFrame 282
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 284, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 284, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 284, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 284, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [15]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 284, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 285, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 325
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [400]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 287
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 286, "kind": "frame"}
+0000 GotoFrame 285
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 25]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 30]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 287, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 288, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 325
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [600]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 290
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 289, "kind": "frame"}
+0000 GotoFrame 288
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 2, "event": "0x1"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['hide']
+001d CallMethod None
+001e Pop None
+001f Push [True, 1, 'this']
+002f GetVariable None
+0030 Push ['startDrag']
+003e CallMethod None
+003f Pop None
+0040 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 4, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [20]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 4, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 6, "event": "0x1"}
+0000 Push ['velo', 20]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 6, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 8, "event": "0x1"}
+0000 Push ['velo', 15]
+000e RandomNumber None
+000f Push [10]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 8, "event": "0x2"}
+0000 ConstantPool ['this', '_y', 'velo', '_x', '_root', 'batatao', 'hitTest', 'gotoAndPlay']
+0037 Push ['this']
+003c GetVariable None
+003d Push ['_y', 'this']
+0044 GetVariable None
+0045 Push ['_y']
+004a GetMember None
+004b Push ['velo']
+0050 GetVariable None
+0051 Add2 None
+0052 SetMember None
+0053 Push ['this']
+0058 GetVariable None
+0059 Push ['_y']
+005e GetMember None
+005f Push [450]
+0067 Less2 None
+0068 Not None
+0069 Not None
+006a If {'target': 150}
+006f Push ['this']
+0074 GetVariable None
+0075 Push ['_y', 0.0]
+0083 SetMember None
+0084 Push ['this']
+0089 GetVariable None
+008a Push ['_x', 600]
+0094 RandomNumber None
+0095 SetMember None
+0096 Push ['_root']
+009b GetVariable None
+009c Push ['batatao']
+00a1 GetMember None
+00a2 Push [1, 'this']
+00ac GetVariable None
+00ad Push ['hitTest']
+00b2 CallMethod None
+00b3 Not None
+00b4 If {'target': 214}
+00b9 Push [2, 1, '_root']
+00c8 GetVariable None
+00c9 Push ['batatao']
+00ce GetMember None
+00cf Push ['gotoAndPlay']
+00d4 CallMethod None
+00d5 Pop None
+00d6 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 10, "event": "0x1"}
+0000 Push ['velo', 10]
+000e RandomNumber None
+000f Push [5]
+0017 Add2 None
+0018 SetVariable None
+0019 End None
+
+{"owner": "root", "frame": 290, "kind": "clip", "depth": 10, "event": "0x2"}
+0000 ConstantPool ['this', '_x', 'velo', '_y', '_root', 'batatao', 'hitTest', 'vidas']
+0031 Push ['this']
+0036 GetVariable None
+0037 Push ['_x', 'this']
+003e GetVariable None
+003f Push ['_x']
+0044 GetMember None
+0045 Push ['velo']
+004a GetVariable None
+004b Add2 None
+004c SetMember None
+004d Push ['this']
+0052 GetVariable None
+0053 Push ['_x']
+0058 GetMember None
+0059 Push [600]
+0061 Less2 None
+0062 Not None
+0063 Not None
+0064 If {'target': 144}
+0069 Push ['this']
+006e GetVariable None
+006f Push ['_x', 0.0]
+007d SetMember None
+007e Push ['this']
+0083 GetVariable None
+0084 Push ['_y', 450]
+008e RandomNumber None
+008f SetMember None
+0090 Push ['_root']
+0095 GetVariable None
+0096 Push ['batatao']
+009b GetMember None
+009c Push [1, 'this']
+00a6 GetVariable None
+00a7 Push ['hitTest']
+00ac CallMethod None
+00ad Not None
+00ae If {'target': 200}
+00b3 Push ['_root']
+00b8 GetVariable None
+00b9 Push ['vidas', 0.0]
+00c7 SetMember None
+00c8 End None
+
+{"owner": "root", "frame": 291, "kind": "frame"}
+0000 ConstantPool ['_root', 'vidas', 'pontos']
+0018 Push ['_root']
+001d GetVariable None
+001e Push ['vidas']
+0023 GetMember None
+0024 Push [0.0]
+0030 Greater None
+0031 Not None
+0032 Not None
+0033 If {'target': 66}
+0038 GotoFrame 325
+003d Jump {'target': 88}
+0042 Push ['_root']
+0047 GetVariable None
+0048 Push ['pontos', '_root']
+004f GetVariable None
+0050 Push ['pontos']
+0055 GetMember None
+0056 Increment None
+0057 SetMember None
+0058 Push ['_root']
+005d GetVariable None
+005e Push ['pontos']
+0063 GetMember None
+0064 Push [1000]
+006c Less2 None
+006d Not None
+006e Not None
+006f If {'target': 122}
+0074 GotoFrame 293
+0079 Play None
+007a End None
+
+{"owner": "root", "frame": 292, "kind": "frame"}
+0000 GotoFrame 291
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 324, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None
+
+{"owner": "root", "frame": 324, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "button-340", "frame": 324, "kind": "button", "condition": "0x8"}
+0000 GotoFrame 281
+0005 Play None
+0006 End None
+
+{"owner": "root", "frame": 325, "kind": "frame"}
+0000 Stop None
+0001 End None
+
+{"owner": "root", "frame": 325, "kind": "frame"}
+0000 Push [0.0, 'Mouse']
+0013 GetVariable None
+0014 Push ['show']
+001d CallMethod None
+001e Pop None
+001f End None

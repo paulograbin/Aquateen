@@ -1,0 +1,9 @@
+{
+  "name": "aquateen-threejs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Faithful local Three.js port of the supplied Aquateen Flash game",
+  "scripts": {
+    "test": "node research/verify_engine.cjs && node tests/integration.cjs"
+  }
+}

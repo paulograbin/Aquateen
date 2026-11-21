@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aquateen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div id="stage" role="region" aria-label="Aquateen — jogo">
+      <canvas id="game" aria-label="Mova o mouse para controlar seu herói e desviar dos inimigos."></canvas>
+      <div id="buttons"></div>
+      <div id="message" role="status">Carregando…</div>
+      <button id="resume" hidden>Continuar</button>
+    </div>
+    <footer>
+      <span>Mova o mouse para desviar.</span>
+      <nav aria-label="Controles">
+        <button id="pause" disabled>Pausar</button>
+        <button id="restart" disabled>Reiniciar</button>
+        <button id="fullscreen">Tela cheia</button>
+      </nav>
+    </footer>
+    <p id="accessible-state" class="sr-only" aria-live="polite"></p>
+  </main>
+  <script src="vendor/three.min.js"></script>
+  <script src="assets/scene-data.js"></script>
+  <script src="art-data.js"></script>
+  <script src="geometry.js"></script>
+  <script src="src/engine.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
