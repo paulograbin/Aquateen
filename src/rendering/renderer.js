@@ -50,6 +50,12 @@
       this.webgl.setSize(width, height, false);
     }
 
+    statistics() {
+      const { render, memory } = this.webgl.info;
+      return { drawCalls: render.calls, triangles: render.triangles,
+        textures: memory.textures, geometries: memory.geometries };
+    }
+
     render(drawables) {
       const activeIds = new Set();
       drawables.forEach((drawable, order) => {

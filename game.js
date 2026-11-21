@@ -10,6 +10,8 @@
       this.renderer = renderer;
       this.ui = ui;
       this.clock = new scope.Aquateen.GameClock(engine.data.fps, () => engine.tick());
+      this.performance = new scope.Aquateen.PerformanceStats();
+      this.debugEnabled = true;
     }
 
     start() {
@@ -30,6 +32,7 @@
         onRestart: () => this.restart(),
         onVisibilityChange: hidden => this.visibilityChanged(hidden),
         onResize: () => this.resize(),
+        onToggleDebug: () => this.setDebugEnabled(!this.debugEnabled),
       };
     }
 
@@ -37,6 +40,22 @@
       const frame = scope.Aquateen.buildSceneFrame(this.engine, this.art, this.geometry);
       this.ui.update(frame, this.clock.paused);
       this.renderer.render(frame.drawables);
+      this.performance.recordRender();
+      this.updateDebug(frame);
+    }
+
+    updateDebug(sceneFrame) {
+      const snapshot = this.debugEnabled ? scope.Aquateen.buildDebugSnapshot({
+        engine: this.engine, geometry: this.geometry, sceneFrame,
+        performance: this.performance.snapshot(), renderStats: this.renderer.statistics(),
+        paused: this.clock.paused,
+      }) : null;
+      this.ui.updateDebug(snapshot, this.debugEnabled);
+    }
+
+    setDebugEnabled(enabled) {
+      this.debugEnabled = Boolean(enabled);
+      this.render();
     }
 
     resize() {
@@ -52,6 +71,7 @@
 
     restart() {
       this.engine.reset();
+      this.performance.resetSampling();
       this.setPaused(false);
     }
 
@@ -77,11 +97,13 @@
     visibilityChanged(hidden) {
       if (hidden && this.engine.root.frame !== 1) this.setPaused(true);
       this.clock.resetTimestamp();
+      this.performance.resetSampling();
     }
 
     scheduleNextFrame() {
       requestAnimationFrame(timestamp => {
         this.clock.advance(timestamp);
+        this.performance.recordAnimationFrame(timestamp, this.engine.ticks);
         this.render();
         this.scheduleNextFrame();
       });
@@ -98,6 +120,8 @@
       geometry: application.geometry,
       draw: () => application.render(),
       setPaused: paused => application.setPaused(paused),
+      setDebugEnabled: enabled => application.setDebugEnabled(enabled),
+      get debugEnabled() { return application.debugEnabled; },
       get paused() { return application.clock.paused; },
     };
   }

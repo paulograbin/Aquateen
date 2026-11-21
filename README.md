@@ -21,6 +21,8 @@ Open **index.html** in a modern browser. On macOS, you can also double-click **P
 
 Controls below the game let you pause, restart, or switch to fullscreen.
 
+The debug overlay is visible by default. Press **D** or click **Debug (D)** to hide or show it. It displays character and enemy hitboxes, animation frames, FPS, lives, score, positions, and rendering statistics. Green boxes mark your character, orange marks enemies, pink marks current overlaps, and blue marks button hit areas. Display FPS is measured separately from the original game’s 12 updates per second.
+
 ## Publish with GitHub Pages
 
 The game can be hosted directly on GitHub Pages:

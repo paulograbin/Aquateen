@@ -1,10 +1,11 @@
 (function (scope) {
   'use strict';
-  const { ButtonOverlays } = scope.Aquateen;
+  const { ButtonOverlays, DebugOverlay } = scope.Aquateen;
 
   function pageElements() {
     return Object.fromEntries(['stage', 'game', 'message', 'buttons', 'pause', 'resume',
-      'restart', 'fullscreen', 'accessible-state'].map(id => [id, document.getElementById(id)]));
+      'restart', 'fullscreen', 'accessible-state', 'debug-toggle', 'debug-overlay']
+      .map(id => [id, document.getElementById(id)]));
   }
 
   class BrowserUI {
@@ -13,6 +14,7 @@
       this.elements = pageElements();
       this.canvas = this.elements.game;
       this.lastAnnouncement = '';
+      this.debugOverlay = new DebugOverlay(this.elements['debug-overlay'], stageSize);
     }
 
     bind(callbacks) {
@@ -40,16 +42,25 @@
       this.elements.resume.addEventListener('click', this.callbacks.onResume);
       this.elements.restart.addEventListener('click', this.callbacks.onRestart);
       this.elements.fullscreen.addEventListener('click', () => this.toggleFullscreen());
+      this.elements['debug-toggle'].addEventListener('click', this.callbacks.onToggleDebug);
     }
 
     bindWindowEvents() {
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && !document.fullscreenElement) this.callbacks.onTogglePause();
+        this.handleDebugShortcut(event);
       });
       document.addEventListener('visibilitychange', () => this.callbacks.onVisibilityChange(document.hidden));
       document.addEventListener('fullscreenchange', () => this.fullscreenChanged());
       this.resizeObserver = new ResizeObserver(() => this.callbacks.onResize());
       this.resizeObserver.observe(this.elements.stage);
+    }
+
+    handleDebugShortcut(event) {
+      if (event.code !== 'KeyD' || event.repeat || event.ctrlKey || event.metaKey || event.altKey) return;
+      if (event.target?.closest?.('input, textarea, select, [contenteditable="true"]')) return;
+      event.preventDefault();
+      this.callbacks.onToggleDebug();
     }
 
     pointerPosition(event) {
@@ -74,6 +85,11 @@
       document.body.dataset.frame = frame.frame;
     }
 
+    updateDebug(snapshot, enabled) {
+      this.debugOverlay.update(snapshot, enabled);
+      this.elements['debug-toggle'].setAttribute('aria-pressed', String(enabled));
+    }
+
     announce(message) {
       if (message === this.lastAnnouncement) return;
       this.elements['accessible-state'].textContent = message;
@@ -96,6 +112,7 @@
 
     showReady() {
       this.elements.pause.disabled = this.elements.restart.disabled = false;
+      this.elements['debug-toggle'].disabled = false;
       this.elements.message.hidden = true;
       document.body.dataset.ready = 'true';
     }

@@ -11,6 +11,16 @@
     <div id="stage" role="region" aria-label="Aquateen — jogo">
       <canvas id="game" aria-label="Mova o mouse para controlar seu herói e desviar dos inimigos."></canvas>
       <div id="buttons"></div>
+      <div id="debug-overlay" hidden>
+        <svg aria-hidden="true"></svg>
+        <pre aria-label="Game diagnostics"></pre>
+        <div class="debug-legend" aria-label="Hitbox colors">
+          <span class="debug-hero">Hero</span>
+          <span class="debug-enemy">Enemy</span>
+          <span class="debug-overlap">Overlap</span>
+          <span class="debug-button">Button</span>
+        </div>
+      </div>
       <div id="message" role="status">Carregando…</div>
       <button id="resume" hidden>Continuar</button>
     </div>
@@ -20,6 +30,7 @@
         <button id="pause" disabled>Pausar</button>
         <button id="restart" disabled>Reiniciar</button>
         <button id="fullscreen">Tela cheia</button>
+        <button id="debug-toggle" aria-pressed="true" aria-controls="debug-overlay" aria-keyshortcuts="D" disabled>Debug (D)</button>
       </nav>
     </footer>
     <p id="accessible-state" class="sr-only" aria-live="polite"></p>
@@ -36,7 +47,10 @@
   <script src="src/rendering/text-rasterizer.js"></script>
   <script src="src/rendering/textures.js"></script>
   <script src="src/rendering/renderer.js"></script>
+  <script src="src/debug/performance-stats.js"></script>
+  <script src="src/debug/snapshot.js"></script>
   <script src="src/ui/button-overlays.js"></script>
+  <script src="src/ui/debug-overlay.js"></script>
   <script src="src/ui/browser-ui.js"></script>
   <script src="src/game-clock.js"></script>
   <script src="game.js"></script>

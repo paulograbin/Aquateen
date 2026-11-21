@@ -26,6 +26,9 @@ Recovered scene data → Engine → buildSceneFrame → GameRenderer
 | Position and handle accessible game buttons | `ui/button-overlays.js` |
 | Pointer events, pause controls, fullscreen and announcements | `ui/browser-ui.js` |
 | Advance a fixed number of gameplay ticks from elapsed time | `game-clock.js` |
+| Measure display FPS, actual game tick rate and rendered frames | `debug/performance-stats.js` |
+| Read current collision bounds and gameplay state without changing them | `debug/snapshot.js` |
+| Draw debug rectangles, labels and counters above the game | `ui/debug-overlay.js` |
 
 ## Boundaries
 
@@ -34,6 +37,7 @@ Recovered scene data → Engine → buildSceneFrame → GameRenderer
 - The renderer owns GPU resources; the texture store owns image and text textures. Removing an instance also releases its temporary text resources.
 - Browser controls report events through callbacks. They do not run scripts or advance timelines.
 - The application coordinates these components; their internal algorithms remain in their own files.
+- Debugging reads the same world-space bounds used by collision detection. Overlap highlights describe the current bounds, not a recorded damage event. The overlay never invokes game scripts or collision callbacks. Animation-frame sampling measures display FPS; pointer-triggered redraws contribute only to the rendered-frame count.
 
 ## Names inherited from the original
 
