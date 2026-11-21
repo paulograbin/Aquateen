@@ -4,6 +4,6 @@
   "private": true,
   "description": "Faithful local Three.js port of the supplied Aquateen Flash game",
   "scripts": {
-    "test": "node research/verify_engine.cjs && node tests/integration.cjs"
+    "test": "node tests/gameplay.cjs && node tests/integration.cjs && node tests/components.cjs"
   }
 }

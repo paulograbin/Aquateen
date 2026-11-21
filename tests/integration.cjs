@@ -2,74 +2,133 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const {Engine} = require('../src/engine.js');
-const {Geometry, matrix, multiply, transformBounds} = require('../geometry.js');
+const { Engine } = require('../src/engine.js');
+const { Geometry, toAffineMatrix, multiplyTransforms, transformBounds } = require('../src/scene/geometry.js');
+const { buildSceneFrame } = require('../src/scene/frame.js');
 const data = require('../assets/scene.json');
-const scope = {window:{}};
-vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../art-data.js'),'utf8'),scope);
-const art = scope.window.AQUATEEN_ART;
-const geometry = new Geometry(data,art);
-const intersects = (a,b) => {
-  const aa=geometry.bounds(a),bb=geometry.bounds(b);
-  return !!aa&&!!bb&&aa[0]<=bb[1]&&aa[1]>=bb[0]&&aa[2]<=bb[3]&&aa[3]>=bb[2];
-};
-assert.deepEqual(transformBounds([0,10,0,20],multiply(matrix({scale:[2,3],skew:[0,0],xy:[5,7]}),[1,0,0,1,10,20])),[25,45,67,127]);
 
-const seen = new Set();
+const context = { window: {} };
+vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../art-data.js'), 'utf8'), context);
+const art = context.window.AQUATEEN_ART;
+const geometry = new Geometry(data, art);
+const seenSymbols = new Set();
+const HERO_BUTTONS = [11, 16, 21, 26];
+
+function advance(engine, ticks) {
+  for (let tick = 0; tick < ticks; tick++) engine.tick();
+}
+
+function selectHero(engine, symbolId) {
+  engine.clickButton(engine.list().find(instance => instance.id === symbolId));
+}
+
+function validateButton(instance) {
+  const bounds = geometry.bounds(instance, true);
+  assert(bounds && bounds.every(Number.isFinite), 'Button needs finite world-space hit area');
+  assert(bounds[1] > bounds[0] && bounds[3] > bounds[2]);
+}
+
+function validateArtwork(instance) {
+  const symbol = art.symbols[instance.id];
+  assert(symbol, 'Missing artwork ' + instance.id);
+  assert(symbol.bounds.every(Number.isFinite), 'Bad bounds ' + instance.id);
+  if (instance.type === 'editText') {
+    const svg = art.makeTextSVG(instance.id, instance.symbol.text || '1000');
+    assert(!svg.includes('NaN'), 'Bad text layout ' + instance.id);
+  } else {
+    assert(symbol.image?.startsWith('data:image/'), 'Artwork must work offline: ' + instance.id);
+  }
+  seenSymbols.add(instance.id);
+}
+
 function validateDisplay(engine) {
   for (const instance of engine.list()) {
-    if (instance.type==='button') {
-      const bounds=geometry.bounds(instance,true);
-      assert(bounds&&bounds.every(Number.isFinite),'Button needs finite world-space hit area');
-      assert(bounds[1]>bounds[0]&&bounds[3]>bounds[2]);
-    }
-    if (instance.type==='sprite'||instance.type==='button') continue;
-    const symbol=art.symbols[instance.id];
-    assert(symbol,'Missing artwork '+instance.id);
-    assert(symbol.bounds.every(Number.isFinite),'Bad bounds '+instance.id);
-    if (instance.type==='editText') {
-      assert(art.deviceFont.glyphs['0']&&art.deviceFont.glyphs['9']);
-      const svg=art.makeTextSVG(instance.id,instance.symbol.text||'1000');
-      assert(!svg.includes('NaN'),'Bad text layout '+instance.id);
-    } else assert(symbol.image?.startsWith('data:image/'),'Artwork must work offline: '+instance.id);
-    seen.add(instance.id);
+    if (instance.type === 'button') validateButton(instance);
+    if (instance.type === 'sprite' || instance.type === 'button') continue;
+    validateArtwork(instance);
+  }
+  const frame = buildSceneFrame(engine, art, geometry);
+  assert.equal(frame.frame, engine.root.frame);
+  for (const drawable of frame.drawables) {
+    assert(drawable.transform.every(Number.isFinite));
+    if (drawable.textFormat) assert.equal(typeof drawable.text, 'string');
   }
 }
-for (const [index,id] of [11,16,21,26].entries()) {
-  const engine=new Engine(data,{random:()=>.5});
+
+function verifyButtonStates(engine, symbolId) {
+  const button = engine.list().find(instance => instance.id === symbolId);
+  for (const state of [2, 4, 1]) {
+    engine.setButtonState(button, state);
+    validateDisplay(engine);
+  }
+  const bounds = geometry.bounds(button);
+  assert(bounds[3] - bounds[2] > 50, 'Button bounds include character sprite');
+}
+
+function verifyWavesAndVictory(engine, heroIndex) {
+  const waves = new Set();
+  for (let tick = 0; tick < 1100; tick++) {
+    engine.tick();
+    validateDisplay(engine);
+    const frameInHeroRoute = engine.root.frame - heroIndex * 81;
+    if ([39, 42, 45, 48].includes(frameInHeroRoute)) waves.add(frameInHeroRoute);
+  }
+  assert.equal(waves.size, 4);
+  assert.equal(engine.root.frame, 81 + heroIndex * 81);
+}
+
+function verifyCollisionBounds(engine, hero, enemy) {
+  engine.setPointer(enemy._x, enemy._y);
+  assert(geometry.intersects(hero, enemy), 'Overlapping original artwork bounds must collide');
+  engine.setPointer(-1000, -1000);
+  assert(!geometry.intersects(hero, enemy), 'Separated bounds must not collide');
+}
+
+function verifyDamageAnimation(engine, enemy) {
+  engine.options.hitTest = (first, second) => geometry.intersects(first, second);
+  enemy._x = 300;
+  enemy._y = 100;
+  enemy.vars.velo = 0;
+  engine.setPointer(300, 100);
+  engine.tick();
+  enemy._x = -1000;
+  advance(engine, 12);
+  assert.equal(engine.root.vars.vidas, 4, 'Geometry collision removes one life after the hit animation');
+}
+
+function verifyGameOverAndReset(engine, heroIndex) {
+  engine.root.vars.vidas = 0;
+  engine.tick();
   validateDisplay(engine);
-  const button=engine.list().find(i=>i.id===id);
-  for(const state of [2,4,1]) {engine.setButtonState(button,state);validateDisplay(engine);}
-  const visibleBounds=geometry.bounds(button);
-  assert(visibleBounds[3]-visibleBounds[2]>50,'Button bounds include character sprite');
-  engine.clickButton(button);
-  const waves=new Set();
-  for(let tick=0;tick<1100;tick++) {
-    engine.tick();validateDisplay(engine);
-    const relative=engine.root.frame-index*81;
-    if([39,42,45,48].includes(relative))waves.add(relative);
-  }
-  assert.equal(waves.size,4);
-  assert.equal(engine.root.frame,81+index*81);
-  engine.reset();engine.clickButton(engine.list().find(i=>i.id===id));
-  for(let tick=0;tick<36;tick++)engine.tick();
-  const hero=engine.drag;
-  const enemy=engine.list().find(i=>i.events.some(e=>e.event&2));
-  engine.setPointer(enemy._x,enemy._y);
-  assert(intersects(hero,enemy),'Original hero/enemy bounds must collide');
-  engine.setPointer(-1000,-1000);
-  assert(!intersects(hero,enemy),'Separated bounds must not collide');
-  engine.options.hitTest=intersects;
-  enemy._x=300;enemy._y=100;enemy.vars.velo=0;engine.setPointer(300,100);
-  engine.tick();enemy._x=-1000;
-  for(let tick=0;tick<12;tick++)engine.tick();
-  assert.equal(engine.root.vars.vidas,4,'Real geometry collision must remove one life after animation');
-  engine.root.vars.vidas=0;engine.tick();validateDisplay(engine);
-  assert.equal(engine.root.frame,82+index*81);
-  const staleButton=engine.list().find(i=>i.type==='button');
-  engine.reset();engine.clickButton(staleButton);
-  assert.equal(engine.root.frame,1,'Disposed buttons cannot change a restarted game');
+  assert.equal(engine.root.frame, 82 + heroIndex * 81);
+  const staleButton = engine.list().find(instance => instance.type === 'button');
+  engine.reset();
+  engine.clickButton(staleButton);
+  assert.equal(engine.root.frame, 1, 'Disposed buttons cannot change a restarted game');
 }
-console.log(`PASS ${seen.size} display-list symbols across all four heroes, hover/down states, countdowns, four waves, endings, actual collision bounds and damage.`);
-console.log('PASS offline asset completeness, text glyphs, transforms and original 600×450 / 12 FPS metadata.');
-assert.equal(data.width,600);assert.equal(data.height,450);assert.equal(data.fps,12);
+
+function verifyCharacter(symbolId, heroIndex) {
+  const engine = new Engine(data, { random: () => .5 });
+  validateDisplay(engine);
+  verifyButtonStates(engine, symbolId);
+  selectHero(engine, symbolId);
+  verifyWavesAndVictory(engine, heroIndex);
+  engine.reset();
+  selectHero(engine, symbolId);
+  advance(engine, 36);
+  const enemy = engine.list().find(instance => instance.events.some(event => event.event & 2));
+  verifyCollisionBounds(engine, engine.drag, enemy);
+  verifyDamageAnimation(engine, enemy);
+  verifyGameOverAndReset(engine, heroIndex);
+}
+
+const parentTransform = toAffineMatrix({ scale: [2, 3], skew: [0, 0], xy: [5, 7] });
+const childTransform = [1, 0, 0, 1, 10, 20];
+assert.deepEqual(transformBounds([0, 10, 0, 20], multiplyTransforms(parentTransform, childTransform)), [25, 45, 67, 127]);
+assert.equal(data.width, 600);
+assert.equal(data.height, 450);
+assert.equal(data.fps, 12);
+assert(art.deviceFont.glyphs['0'] && art.deviceFont.glyphs['9']);
+HERO_BUTTONS.forEach(verifyCharacter);
+console.log('PASS ' + seenSymbols.size + ' display-list symbols across all heroes, button states, waves and endings.');
+console.log('PASS scene-frame data, offline assets, text glyphs, collision bounds, damage and reset.');

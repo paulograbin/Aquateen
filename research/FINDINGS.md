@@ -27,8 +27,8 @@ These findings derive from SWF tags and AVM1 bytecode, not observation of Flash 
 - `export_scene.py`: complete 22 timeline / 340 symbol / 999 command export for native playback.
 - `assets/scene-data.js`: browser-loadable timeline and action data.
 - `contact-sheet.jpg`: extracted artwork overview.
-- `src/engine.js`: JavaScript implementation of the exact 23 observed AVM1 opcodes and display-list/timeline behavior.
-- `verify_engine.cjs`: menu, all character branches, dragging, four waves, winning, return-to-menu, damage, game-over and retry tests.
+- `src/engine.js` and `src/runtime/`: JavaScript implementation of the observed AVM1 operations and display-list/timeline behavior.
+- `tests/gameplay.cjs`: menu, all character branches, dragging, four waves, winning, return-to-menu, damage, game-over and retry tests.
 
 ## Limitations
 
