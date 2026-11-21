@@ -21,6 +21,17 @@ Open **index.html** in a modern browser. On macOS, you can also double-click **P
 
 Controls below the game let you pause, restart, or switch to fullscreen.
 
+## Publish with GitHub Pages
+
+The game can be hosted directly on GitHub Pages:
+
+1. Push this project, including `.nojekyll`, to the repository’s `main` branch.
+2. Open **Settings → Pages** in the GitHub repository.
+3. Under **Build and deployment**, choose **Deploy from a branch**.
+4. Select **main** and **/ (root)**, then click **Save**.
+
+After deployment, the game will be available at **https://paulograbin.github.io/Aquateen/**. Future pushes to `main` will update it automatically. No build command or dependency installation is required.
+
 ## What was done
 
 The Flash game was extracted from the executable. Its original artwork, animations, Portuguese text, and game rules were recovered and used to rebuild it for modern browsers with **Three.js**.
